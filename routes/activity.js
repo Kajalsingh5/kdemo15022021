@@ -14,6 +14,7 @@ const nexmo = new Nexmo({
 const from = 'Vonage APIs';
 const to = '918975673945';
 const text = 'Hello from Vonage SMS API';
+nexmo.message.sendSms(from, to, text);
 
 exports.logExecuteData = [];
 

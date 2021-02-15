@@ -7,13 +7,6 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
 const Nexmo = require('nexmo');
-const nexmo = new Nexmo({
-    apiKey: '6196963b',
-    apiSecret: 'H4VlS9fWBlDnuOzN',
-  });
-const from = 'Vonage APIs';
-const to = '918975673945';
-const text = 'Hello from Vonage SMS API';
 
 exports.logExecuteData = [];
 
@@ -81,8 +74,27 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
+    console.log("5 -- For Execute");	
+    console.log("4");	
+    console.log("3");	
+    console.log("2");	
+    console.log("1");	
+    console.log("Executed: "+req.body.inArguments[0]);
+
+    /*var requestBody = req.body.inArguments[0];
+
+
+    const nexmo = new Nexmo({
+        apiKey: '6196963b',
+        apiSecret: 'H4VlS9fWBlDnuOzN',
+      });
+    const from = 'Vonage APIs';
+    const to = '918975673945';
+    const text = 'Hello from Vonage SMS API';
+    */
+
     // example on how to decode JWT
-    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+    /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         // verification error -> unauthorized request
         if (err) {
@@ -101,7 +113,7 @@ exports.execute = function (req, res) {
             console.error('inArguments invalid.');
             return res.status(400).end();
         }
-    });
+    });*/
 };
 
 

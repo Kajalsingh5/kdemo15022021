@@ -16,9 +16,12 @@
     "arguments": {
         "execute": {
            "inArguments":[
-				{
+				    {
                     "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
-                }									
+                },
+                {
+                  "Phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
+              }											
 			],
           "outArguments": [],
           "url": "https://kdemo15022021.herokuapp.com/journeybuilder/execute",

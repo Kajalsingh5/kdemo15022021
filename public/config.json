@@ -17,11 +17,11 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+                    "emailAddress": "{{Contact.Attribute.JourneyEntrySource.EmailAddress}}"
                 }									
 			],
           "outArguments": [],
-          "url": "https://<your-domain-here>/journeybuilder/execute",
+          "url": "https://kdemo15022021.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,7 +33,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "87caac4d-236e-47e2-a18a-f7e15ba84573",
       "save": {
-        "url": "https://<your-domain-here>/journeybuilder/save",
+        "url": "https://kdemo15022021.herokuapp.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
@@ -43,12 +43,12 @@
         "useJwt": true
        },
       "stop": {
-        "url": "https://<your-domain-here>/journeybuilder/stop",
+        "url": "https://kdemo15022021.herokuapp.com/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://<your-domain-here>/journeybuilder/validate",
+        "url": "https://kdemo15022021.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }

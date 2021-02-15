@@ -75,7 +75,7 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.KJourneyBuilder.EmailAddress}}"
+            "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
         }];
         
         payload['metaData'].isConfigured = true;

@@ -17,7 +17,7 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.KJourneyBuilder.EmailAddress}}"
+                    "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
                 }									
 			],
           "outArguments": [],

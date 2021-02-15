@@ -6,6 +6,14 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
+const Nexmo = require('nexmo');
+const nexmo = new Nexmo({
+    apiKey: '6196963b',
+    apiSecret: 'H4VlS9fWBlDnuOzN',
+  });
+const from = 'Vonage APIs';
+const to = '918975673945';
+const text = 'Hello from Vonage SMS API';
 
 exports.logExecuteData = [];
 

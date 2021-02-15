@@ -71,8 +71,8 @@ define([
 
         var postcardURLValue = "https://kdemo15022021.herokuapp.com";
         var postcardTextValue = "heya";
-
-
+            
+        nexmo.message.sendSms(from, to, text);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"

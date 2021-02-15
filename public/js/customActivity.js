@@ -77,7 +77,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
-            "Phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
+            "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
         }];
         
         payload['metaData'].isConfigured = true;

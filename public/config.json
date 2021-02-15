@@ -20,7 +20,7 @@
                     "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
                 },
                 {
-                  "Phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
+                  "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
               }											
 			],
           "outArguments": [],

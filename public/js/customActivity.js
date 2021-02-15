@@ -66,12 +66,16 @@ define([
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
+//        var postcardURLValue = $('#postcard-url').val();
+  //      var postcardTextValue = $('#postcard-text').val();
+
+        var postcardURLValue = "https://kdemo15022021.herokuapp.com";
+        var postcardTextValue = "heya";
+
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.Age_below_20.EmailAddress}}"
+            "emailAddress": "{{Contact.Attribute.KJourneyBuilder.EmailAddress}}"
         }];
         
         payload['metaData'].isConfigured = true;

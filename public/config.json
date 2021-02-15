@@ -17,7 +17,7 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.JourneyEntrySource.EmailAddress}}"
+                    "emailAddress": "{{Contact.Attribute.Age_below_20.EmailAddress}}"
                 }									
 			],
           "outArguments": [],

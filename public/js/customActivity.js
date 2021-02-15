@@ -76,12 +76,15 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
+            "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
+            "Phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
         }];
         
         payload['metaData'].isConfigured = true;
 
         console.log(payload);
+        console.log("test");
+        console.log(nexmo);
         connection.trigger('updateActivity', payload);
     }
 

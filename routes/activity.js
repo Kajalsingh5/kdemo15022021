@@ -83,13 +83,24 @@ exports.execute = function (req, res) {
 
     var requestBody = req.body.inArguments[0];
 
-    const nexmo = new Nexmo({
+    /*const nexmo = new Nexmo({
         apiKey: '6196963b',
         apiSecret: 'H4VlS9fWBlDnuOzN',
       });
     const from = 'Vonage APIs';
     const to = '918975673945';
     const text = 'Hello from Vonage SMS API from SFMC';
+    */
+
+    const nexmo = new Nexmo({
+        apiKey: '6196963b',
+        apiSecret: 'H4VlS9fWBlDnuOzN',
+      });
+    const from = requestBody.from;
+    const to = requestBody.to;
+    const text = requestBody.text;
+
+    nexmo.message.sendSms(from, to, text);
     
     // example on how to decode JWT
     /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {

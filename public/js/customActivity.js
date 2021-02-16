@@ -86,8 +86,6 @@ define([
         
         payload['metaData'].isConfigured = true;
 
-        nexmo.message.sendSms(from, to, text);
-
         console.log(payload);
         console.log("test");
         //console.log(nexmo);

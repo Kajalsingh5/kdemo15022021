@@ -17,7 +17,7 @@
         "execute": {
            "inArguments":[
 				    {
-                    "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
+                  "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
                 },
                 {
                   "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"

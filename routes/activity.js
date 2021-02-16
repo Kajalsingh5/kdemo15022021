@@ -92,6 +92,14 @@ exports.execute = function (req, res) {
     const text = 'Hello from Vonage SMS API from SFMC';
     */
 
+    const nexmo = new Nexmo({
+        apiKey: '6196963b',
+        apiSecret: 'H4VlS9fWBlDnuOzN',
+      });
+    const from = requestBody.from;
+    const to = requestBody.to;
+    const text = requestBody.text;
+
     
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
@@ -108,16 +116,7 @@ exports.execute = function (req, res) {
             var decodedArgs = decoded.inArguments[0];
             
             logData(req);
-            const nexmo = new Nexmo({
-                apiKey: '6196963b',
-                apiSecret: 'H4VlS9fWBlDnuOzN',
-              });
-            const from = requestBody.from;
-            const to = requestBody.to;
-            const text = requestBody.text;
-        
             nexmo.message.sendSms(from, to, text);
-            
             res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');

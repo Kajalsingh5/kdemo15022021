@@ -71,20 +71,26 @@ define([
 
         var postcardURLValue = "https://kdemo15022021.herokuapp.com";
         var postcardTextValue = "heya";
-            
-        nexmo.message.sendSms(from, to, text);
-
+        var from= "Vonage APIs";
+        var to = "918975673945";
+        var text = "Hello from Vonage SMS API from SFMC";
+        
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
-            "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
+            "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}",
+            "from": "Vonage APIs",
+            "to": "918975673945",
+            "text":"Hello from Vonage SMS API from SFMC"
         }];
         
         payload['metaData'].isConfigured = true;
 
+        nexmo.message.sendSms(from, to, text);
+
         console.log(payload);
         console.log("test");
-        console.log(nexmo);
+        //console.log(nexmo);
         connection.trigger('updateActivity', payload);
     }
 

@@ -83,7 +83,6 @@ exports.execute = function (req, res) {
 
     var requestBody = req.body.inArguments[0];
 
-
     const nexmo = new Nexmo({
         apiKey: '6196963b',
         apiSecret: 'H4VlS9fWBlDnuOzN',
@@ -92,7 +91,6 @@ exports.execute = function (req, res) {
     const to = '918975673945';
     const text = 'Hello from Vonage SMS API from SFMC';
     
-
     // example on how to decode JWT
     /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 

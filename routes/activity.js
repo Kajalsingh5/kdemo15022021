@@ -99,7 +99,6 @@ exports.execute = function (req, res) {
     const from = requestBody.from;
     const to = requestBody.to;
     const text = requestBody.text;
-
     
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {

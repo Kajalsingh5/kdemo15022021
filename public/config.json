@@ -30,7 +30,7 @@
             "header": "",
             "format": "json",
             "useJwt": true,
-            "timeout": 10000
+            "timeout": 10
         }
     },
     "configurationArguments": {

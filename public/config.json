@@ -18,10 +18,7 @@
            "inArguments":[
 				    {
                   "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
-                },
-                {
-                  "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
-              }											
+                }										
 			],
           "outArguments": [],
           "url": "https://kdemo15022021.herokuapp.com/journeybuilder/execute",
@@ -64,7 +61,43 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [],
+                "inArguments": [
+                  {
+                    "phone": {
+                        "dataType": "Phone",
+                        "isNullable": false,
+                        "direction": "out"   
+                    }
+                },                    
+                {
+                    "emailAddress": {
+                        "dataType": "Email",
+                        "isNullable": false,
+                        "direction": "out"   
+                    }
+                },
+                {
+                  "from": {
+                      "dataType": "String",
+                      "isNullable": false,
+                      "direction": "out"   
+                  }
+                },
+                {
+                  "to": {
+                      "dataType": "Phone",
+                      "isNullable": false,
+                      "direction": "out"   
+                  }
+                },
+                {
+                  "text": {
+                      "dataType": "String",
+                      "isNullable": false,
+                      "direction": "out"   
+                  }
+                }
+                ],
                 "outArguments": []
             }
         }

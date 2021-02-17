@@ -26,6 +26,7 @@ define([
     }
 
     function initialize(data) {
+        console.log("INITACTIVITY INITACTIVITY INITACTIVITY INITACTIVITY INITACTIVITY ");
         console.log(data);
         if (data) {
             payload = data;
@@ -39,8 +40,11 @@ define([
         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
+        console.log("INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS ");
         console.log(inArguments);
+        console.log("INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS INARGS ");
+
+//        console.log(inArguments);
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
@@ -57,11 +61,13 @@ define([
     }
 
     function onGetTokens(tokens) {
+        console.log("Tokens function: "+JSON.stringify(tokens));
         console.log(tokens);
         authTokens = tokens;
     }
 
     function onGetEndpoints(endpoints) {
+        console.log("Get End Points function: "+JSON.stringify(endpoints));
         console.log(endpoints);
     }
 
@@ -69,6 +75,7 @@ define([
 //        var postcardURLValue = $('#postcard-url').val();
   //      var postcardTextValue = $('#postcard-text').val();
 
+        console.log("Save Save Save Save Save Save"); 
         var postcardURLValue = "https://kdemo15022021.herokuapp.com";
         var postcardTextValue = "heya";
         var from= "Vonage APIs";
@@ -78,10 +85,10 @@ define([
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
-            "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}",
-            "from": "Vonage APIs",
-            "to": "918975673945",
-            "text":"Hello from Vonage SMS API from SFMC"
+           // "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
+           // "from": "Vonage APIs",
+           // "to": "918975673945",
+           // "text":"Hello from Vonage SMS API from SFMC"
         }];
         
         payload['metaData'].isConfigured = true;
@@ -91,6 +98,5 @@ define([
         //console.log(nexmo);
         connection.trigger('updateActivity', payload);
     }
-
 
 });

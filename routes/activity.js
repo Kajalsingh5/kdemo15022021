@@ -76,6 +76,8 @@ exports.execute = function (req, res) {
 
     console.log("For Execute");	
     console.log("Executed: "+req);
+    console.log("Executed: "+Object.keys(req.body));
+    
 
     var requestBody = req.body.inArguments[0];
 

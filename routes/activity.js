@@ -143,6 +143,8 @@ exports.execute = function (req, res) {
       }
     );    
 
+    logData(req);
+    res.send(200, 'Execute');
 
     /*const nexmo = new Nexmo({
         apiKey: '6196963b',

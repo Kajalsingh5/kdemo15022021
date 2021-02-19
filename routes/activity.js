@@ -199,6 +199,7 @@ console.log(emailAddress);
 
 };
 
+/*
 exports.post = function (req, res) {
 
   console.log("For Execute");	
@@ -226,12 +227,7 @@ exports.post = function (req, res) {
         //const { ['message-id']: id, ['to']: number, ['error-text']: error  } = messages[0];
         console.dir(responseData);
         // Get data from response
-        /*const data = {
-          id,
-          number,
-          error
-        };*/
-
+        
         // Emit to the client
        // io.emit('smsStatus', data);
       }
@@ -248,7 +244,7 @@ var emailAddress=requestBody.emailAddress;
 console.log(emailAddress);
 
 };
-
+*/
 
 /*
  * POST Handler for /publish/ route of Activity.

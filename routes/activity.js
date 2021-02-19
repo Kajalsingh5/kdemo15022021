@@ -86,8 +86,7 @@ exports.execute = function (req, res) {
     console.log("Executed: "+req);
     console.log("Executed: "+Object.keys(req.body));
     
-
-    var requestBody = req.body.inArguments[0];
+    //var requestBody = req.body.inArguments[0];
 
     /*const vonage = new Vonage({
         apiKey: '6196963b',

@@ -84,7 +84,7 @@ define([
         
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
+            "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
            // "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
            // "from": "Vonage APIs",
            // "to": "918975673945",

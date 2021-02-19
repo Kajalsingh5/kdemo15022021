@@ -8,7 +8,13 @@ var util = require('util');
 var http = require('https');
 //const Nexmo = require('nexmo');
 //var axios = require('axios');
-const Vonage = require('@vonage/server-sdk');
+//const Vonage = require('@vonage/server-sdk');
+const express = require('express');
+const bodyParser = require('body-parser');
+const ejs = require('ejs');
+const Nexmo = require('nexmo');
+const socketio = require('socket.io');
+
 
 exports.logExecuteData = [];
 
@@ -66,7 +72,7 @@ exports.edit = function (req, res) {
  */
 exports.save = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log( req.body );
     logData(req);
     res.send(200, 'Save');
 };
@@ -83,7 +89,7 @@ exports.execute = function (req, res) {
 
     var requestBody = req.body.inArguments[0];
 
-    const vonage = new Vonage({
+    /*const vonage = new Vonage({
         apiKey: '6196963b',
         apiSecret: 'H4VlS9fWBlDnuOzN'
       })
@@ -103,6 +109,40 @@ exports.execute = function (req, res) {
           }
         }
       })
+
+     */ 
+    
+    // Init Nexmo
+    const nexmo = new Nexmo({
+      apiKey: '6196963b',
+      apiSecret: 'H4VlS9fWBlDnuOzN'
+    }, { debug: true });
+
+    const number='918975673945';
+    const text="heya SFMC -JB";
+
+    nexmo.message.sendSms(
+      '918975673945', number, text, { type: 'unicode' },
+      (err, responseData) => {
+        if(err) {
+          console.log(err);
+        } else {
+          const { messages } = responseData;
+          //const { ['message-id']: id, ['to']: number, ['error-text']: error  } = messages[0];
+          console.dir(responseData);
+          // Get data from response
+          /*const data = {
+            id,
+            number,
+            error
+          };*/
+  
+          // Emit to the client
+         // io.emit('smsStatus', data);
+        }
+      }
+    );    
+
 
     /*const nexmo = new Nexmo({
         apiKey: '6196963b',

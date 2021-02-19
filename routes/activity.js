@@ -163,7 +163,7 @@ nexmo.message.sendSms(from, to, text);
     "to": "918975673945",
     "text": "Hello from Vonage SMS API"
  };*/
-
+/*
  axios({
     method: 'post',
     url: "https://rest.nexmo.com/sms/json",
@@ -180,7 +180,26 @@ nexmo.message.sendSms(from, to, text);
   } )
   .catch( (error) => {
       console.log("Erro --> ", error);
-  } );
+  } );*/
+
+
+  axios.post('https://rest.nexmo.com/sms/json', {
+    api_key: "6196963b",
+    api_secret: "H4VlS9fWBlDnuOzN",
+    from: "Vonage APIs",
+    to: "918975673945",
+    text: "Hello from Vonage SMS API SFMC"
+ }).then( 
+    (response) => { 
+        var result = response.data; 
+        console.log("Success -->");
+        console.log(result); 
+    }, 
+    (error) => { 
+        console.log("error -->");
+        console.log(error); 
+    } 
+); 
 
 //logData(req);
 //res.send(200, 'Execute');

@@ -153,9 +153,8 @@ console.log(text);
 
 nexmo.message.sendSms(from, to, text);
 
-// FOR TESTING
 logData(req);
-res.send(200, 'Publish');
+res.send(200, 'Execute');
 
 };
 

@@ -88,7 +88,7 @@ exports.execute = function (req, res) {
         apiSecret: 'H4VlS9fWBlDnuOzN'
       })
 
-      let text = "👋Hello from Nexmo SFMC";
+      let text = "Hello from Nexmo SFMC";
 
       vonage.message.sendSms("Nexmo", "918975673945", text, {
         type: "unicode"

@@ -125,6 +125,11 @@ exports.execute = function (req, res) {
     */
 
 //new code 19th feb 2021
+console.log('new code 19th feb 2021');
+console.log('email----------');
+var emailAddress=requestBody.emailAddress;
+console.log(emailAddress);
+
 const nexmo = new Nexmo({
     apiKey: '6196963b',
     apiSecret: 'H4VlS9fWBlDnuOzN',
@@ -133,6 +138,18 @@ const nexmo = new Nexmo({
 const from = 'Vonage APIs';
 const to = '918975673945';
 const text = 'Hello from Vonage SMS API';
+
+console.log("nexmo-------");
+console.log(nexmo);
+
+console.log("from-------");
+console.log(from);
+
+console.log("to-------");
+console.log(to);
+
+console.log("text-------");
+console.log(text);
 
 nexmo.message.sendSms(from, to, text);
 

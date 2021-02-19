@@ -90,16 +90,17 @@ exports.execute = function (req, res) {
     const text = 'Hello from Vonage SMS API from SFMC';
     */
 
-    const nexmo = new Nexmo({
+    /*const nexmo = new Nexmo({
         apiKey: '6196963b',
         apiSecret: 'H4VlS9fWBlDnuOzN',
       });
-    const from = requestBody.from;
-    const to = requestBody.to;
-    const text = requestBody.text;
-    
+    var from = requestBody.from;
+    var to = requestBody.to;
+    var text = requestBody.text;
+    */
+
     // example on how to decode JWT
-    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+    /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         // verification error -> unauthorized request
         if (err) {
@@ -120,6 +121,25 @@ exports.execute = function (req, res) {
             return res.status(400).end();
         }
     });
+
+    */
+
+//new code 19th feb 2021
+const nexmo = new Nexmo({
+    apiKey: '6196963b',
+    apiSecret: 'H4VlS9fWBlDnuOzN',
+  });
+
+const from = 'Vonage APIs';
+const to = '918975673945';
+const text = 'Hello from Vonage SMS API';
+
+nexmo.message.sendSms(from, to, text);
+
+// FOR TESTING
+logData(req);
+res.send(200, 'Publish');
+
 };
 
 

@@ -61,43 +61,7 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [
-                  {
-                    "phone": {
-                        "dataType": "Phone",
-                        "isNullable": false,
-                        "direction": "out"   
-                    }
-                },                    
-                {
-                    "emailAddress": {
-                        "dataType": "Email",
-                        "isNullable": false,
-                        "direction": "out"   
-                    }
-                },
-                {
-                  "from": {
-                      "dataType": "String",
-                      "isNullable": false,
-                      "direction": "out"   
-                  }
-                },
-                {
-                  "to": {
-                      "dataType": "Phone",
-                      "isNullable": false,
-                      "direction": "out"   
-                  }
-                },
-                {
-                  "text": {
-                      "dataType": "String",
-                      "isNullable": false,
-                      "direction": "out"   
-                  }
-                }
-                ],
+                "inArguments": [],
                 "outArguments": []
             }
         }

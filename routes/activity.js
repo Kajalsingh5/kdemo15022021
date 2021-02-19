@@ -119,11 +119,11 @@ exports.execute = function (req, res) {
       apiSecret: 'H4VlS9fWBlDnuOzN'
     }, { debug: true });
 
-    const number='918975673945';
+    const number='+918975673945';
     const text="heya SFMC -JB";
 
     nexmo.message.sendSms(
-      '918975673945', number, text, { type: 'unicode' },
+      '+918975673945', number, text, { type: 'unicode' },
       (err, responseData) => {
         if(err) {
           console.log(err);

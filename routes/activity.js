@@ -64,7 +64,8 @@ exports.edit = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
     logData(req);
-    res.send(200, 'Edit');
+    //res.send(200, 'Edit');
+    res.status(200).send('Edit');
 };
 
 /*
@@ -74,7 +75,8 @@ exports.save = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     console.log( req.body );
     logData(req);
-    res.send(200, 'Save');
+    //res.send(200, 'Save');
+    res.status(200).send('Save');
 };
 
 /*
@@ -143,7 +145,8 @@ exports.execute = function (req, res) {
     );    
 
     logData(req);
-    res.send(200, 'Execute');
+    //res.send(200, 'Execute');
+    res.status(200).send('Execute');
 
     /*const nexmo = new Nexmo({
         apiKey: '6196963b',
@@ -193,8 +196,8 @@ exports.execute = function (req, res) {
 //new code 19th feb 2021
 console.log('new code 19th feb 2021');
 console.log('email----------');
-var emailAddress=requestBody.emailAddress;
-console.log(emailAddress);
+//var emailAddress=requestBody.emailAddress;
+//console.log(emailAddress);
 
 };
 
@@ -252,7 +255,9 @@ exports.publish = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
     logData(req);
-    res.send(200, 'Publish');
+    //res.send(200, 'Publish');
+    res.status(200).send('Publish');
+
 };
 
 /*
@@ -262,5 +267,6 @@ exports.validate = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
     logData(req);
-    res.send(200, 'Validate');
+    //res.send(200, 'Validate');
+    res.status(200).send('Validate');
 };

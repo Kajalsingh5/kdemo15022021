@@ -119,8 +119,10 @@ exports.execute = function (req, res) {
       apiSecret: 'H4VlS9fWBlDnuOzN'
     }, { debug: true });
 
-    const number='+918975673945';
-    const text="heya SFMC -JB";
+    //const number='918975673945';
+    //const text="heya SFMC -JB";
+
+    const { number, text } = { number: '918975673945', text: 'heya SFMC -JB' };
 
     nexmo.message.sendSms(
       '+918975673945', number, text, { type: 'unicode' },
@@ -129,17 +131,17 @@ exports.execute = function (req, res) {
           console.log(err);
         } else {
           const { messages } = responseData;
-          //const { ['message-id']: id, ['to']: number, ['error-text']: error  } = messages[0];
+          const { ['message-id']: id, ['to']: number, ['error-text']: error  } = messages[0];
           console.dir(responseData);
           // Get data from response
           /*const data = {
             id,
             number,
             error
-          };*/
-  
+          };
+  */
           // Emit to the client
-         // io.emit('smsStatus', data);
+          //io.emit('smsStatus', data);
         }
       }
     );    

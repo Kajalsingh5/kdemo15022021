@@ -13,7 +13,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const Nexmo = require('nexmo');
-const socketio = require('socket.io');
+//const socketio = require('socket.io');
 
 
 exports.logExecuteData = [];
@@ -197,78 +197,55 @@ console.log('email----------');
 var emailAddress=requestBody.emailAddress;
 console.log(emailAddress);
 
-/*
-const nexmo = new Nexmo({
+};
+
+exports.post = function (req, res) {
+
+  console.log("For Execute");	
+  console.log("Executed: "+req);
+  console.log("Executed: "+Object.keys(req.body));
+  
+
+  var requestBody = req.body.inArguments[0];  
+  // Init Nexmo
+  const nexmo = new Nexmo({
     apiKey: '6196963b',
-    apiSecret: 'H4VlS9fWBlDnuOzN',
-  });
+    apiSecret: 'H4VlS9fWBlDnuOzN'
+  }, { debug: true });
 
-const from = 'Vonage APIs';
-const to = '918975673945';
-const text = 'Hello from Vonage SMS API SFMC';
+  const number='918975673945';
+  const text="heya SFMC -JB";
 
-console.log("nexmo-------");
-console.log(nexmo);
+  nexmo.message.sendSms(
+    '918975673945', number, text, { type: 'unicode' },
+    (err, responseData) => {
+      if(err) {
+        console.log(err);
+      } else {
+        const { messages } = responseData;
+        //const { ['message-id']: id, ['to']: number, ['error-text']: error  } = messages[0];
+        console.dir(responseData);
+        // Get data from response
+        /*const data = {
+          id,
+          number,
+          error
+        };*/
 
-console.log("from-------");
-console.log(from);
+        // Emit to the client
+       // io.emit('smsStatus', data);
+      }
+    }
+  );    
 
-console.log("to-------");
-console.log(to);
+  logData(req);
+  res.send(200, 'Execute');
 
-console.log("text-------");
-console.log(text);
-
-nexmo.message.sendSms(from, to, text);
-*/
-
-/*let data = {
-    "api_key": "6196963b",
-    "api_secret": "H4VlS9fWBlDnuOzN",
-    "from": "Vonage APIs",
-    "to": "918975673945",
-    "text": "Hello from Vonage SMS API"
- };*/
-/*
- axios({
-    method: 'post',
-    url: "https://rest.nexmo.com/sms/json",
-    data:  {
-        "api_key": "6196963b",
-        "api_secret": "H4VlS9fWBlDnuOzN",
-        "from": "Vonage APIs",
-        "to": "918975673945",
-        "text": "Hello from Vonage SMS API"
-     },
-    headers: {'Content-Type': 'application/json'}
-  }).then( (res) => {
-      console.log("Success -->" , res);
-  } )
-  .catch( (error) => {
-      console.log("Erro --> ", error);
-  } );*/
-
-
-  axios.post('https://rest.nexmo.com/sms/json', {
-    api_key: "6196963b",
-    api_secret: "H4VlS9fWBlDnuOzN",
-    from: "Vonage APIs",
-    to: "918975673945",
-    text: "Hello from Vonage SMS API SFMC"
- }).then( 
-    (response) => { 
-        var result = response.data; 
-        console.log("Success -->");
-        console.log(result); 
-    }, 
-    (error) => { 
-        console.log("error -->");
-        console.log(error); 
-    } 
-); 
-
-//logData(req);
-//res.send(200, 'Execute');
+//new code 19th feb 2021
+console.log('new code 19th feb 2021');
+console.log('email----------');
+var emailAddress=requestBody.emailAddress;
+console.log(emailAddress);
 
 };
 

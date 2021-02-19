@@ -16,7 +16,10 @@
     "arguments": {
         "execute": {
            "inArguments":[
-				    {
+             {
+          "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
+        },
+        {
                   "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}"
                 }										
 			],

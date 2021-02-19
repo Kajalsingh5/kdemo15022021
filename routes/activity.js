@@ -156,18 +156,24 @@ console.log(text);
 nexmo.message.sendSms(from, to, text);
 */
 
-let data = {
+/*let data = {
     "api_key": "6196963b",
     "api_secret": "H4VlS9fWBlDnuOzN",
     "from": "Vonage APIs",
     "to": "918975673945",
     "text": "Hello from Vonage SMS API"
- };
+ };*/
 
  axios({
     method: 'post',
     url: "https://rest.nexmo.com/sms/json",
-    data: data,
+    data:  {
+        "api_key": "6196963b",
+        "api_secret": "H4VlS9fWBlDnuOzN",
+        "from": "Vonage APIs",
+        "to": "918975673945",
+        "text": "Hello from Vonage SMS API"
+     },
     headers: {'Content-Type': 'application/json'}
   }).then( (res) => {
       console.log("Success -->" , res);

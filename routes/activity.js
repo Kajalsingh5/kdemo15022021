@@ -6,7 +6,8 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
-const Nexmo = require('nexmo');
+//const Nexmo = require('nexmo');
+var axios = require('axios');
 
 exports.logExecuteData = [];
 
@@ -130,6 +131,7 @@ console.log('email----------');
 var emailAddress=requestBody.emailAddress;
 console.log(emailAddress);
 
+/*
 const nexmo = new Nexmo({
     apiKey: '6196963b',
     apiSecret: 'H4VlS9fWBlDnuOzN',
@@ -152,9 +154,30 @@ console.log("text-------");
 console.log(text);
 
 nexmo.message.sendSms(from, to, text);
+*/
 
-logData(req);
-res.send(200, 'Execute');
+let data = {
+    "api_key": "6196963b",
+    "api_secret": "H4VlS9fWBlDnuOzN",
+    "from": "Vonage APIs",
+    "to": "918975673945",
+    "text": "Hello from Vonage SMS API"
+ };
+
+ axios({
+    method: 'post',
+    url: "https://rest.nexmo.com/sms/json",
+    data: data,
+    headers: {'Content-Type': 'application/json'}
+  }).then( (res) => {
+      console.log("Success -->" , res);
+  } )
+  .catch( (error) => {
+      console.log("Erro --> ", error);
+  } );
+
+//logData(req);
+//res.send(200, 'Execute');
 
 };
 

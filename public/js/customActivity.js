@@ -6,8 +6,8 @@ define([
     'use strict';
 
     var connection = new Postmonger.Session();
-    //var authTokens = {};
-    var authTokens ;
+    var authTokens = {};
+    //var authTokens ;
     var payload = {};
     $(window).ready(onRender);
 
@@ -50,13 +50,15 @@ define([
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                
-              
+                if (key === 'number') {
+                    document.getElementById("number").value = val;
+                }
+
             });
         });
 
         connection.trigger('updateButton', {
-            button: 'next',
+             button: 'next',
             text: 'done',
             visible: true
         });
@@ -76,21 +78,14 @@ define([
     function save() {
 //        var postcardURLValue = $('#postcard-url').val();
   //      var postcardTextValue = $('#postcard-text').val();
+    
+        const numberInput = document.getElementById('number');
+        var textInput = "Helo SFMC JB";
 
         console.log("Save Save Save Save Save Save"); 
-        var postcardURLValue = "https://kdemo15022021.herokuapp.com";
-        var postcardTextValue = "heya";
-        var from= "Vonage APIs";
-        var to = "918975673945";
-        var text = "Hello from Vonage SMS API from SFMC";
 
         console.log("data from in");
-        console.log("{{Contact.Attribute.SMSCustomActivity.Phone}}");
-        console.log("{{Contact.Attribute.SMSCustomActivity.EmailAddress}}");
         console.log("data from ends");
-
-        console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.Phone}}");
-        console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}");
         
       /*  payload['arguments'].execute.inArguments = [{
           //  "tokens": authTokens,
@@ -111,15 +106,19 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "kajal.singh@eternussolutions.com",
-            "phone": "918975673945"
-           
+            //"emailAddress": "kajal.singh@eternussolutions.com",
+            //"phone": "918975673945"
+            phone :"918975673945"
         }];
     
 
         payload['metaData'].isConfigured = true;
 
         console.log(payload);
+        console.log("payload: "+JSON.stringify(payload));
+        console.log(tokens);
+        
+
         console.log("test");
         //console.log(nexmo);
         connection.trigger('updateActivity', payload);

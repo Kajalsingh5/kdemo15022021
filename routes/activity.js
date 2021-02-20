@@ -90,6 +90,14 @@ exports.execute = function (req, res) {
     
     console.log("Executed: "+Object.keys(req));
 
+    var vals = Object.keys(req).map(function(key) {
+      return req[key];
+    });
+
+    console.log("req.body: ");
+    console.log(vals);
+    
+    /*
     console.log("req.body: ");
     console.log(Object.values(req.body));
     
@@ -113,7 +121,7 @@ exports.execute = function (req, res) {
       console.log("val---"+req[keys[i]]);
     }
 
-
+*/
     //console.log("Executed entries: "+Object.entries(req));
     
     //Object.keys(req).forEach(e=>console.log(e+"="+req[e]));

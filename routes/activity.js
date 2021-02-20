@@ -85,10 +85,20 @@ exports.save = function (req, res) {
 exports.execute = function (req, res) {
 
     console.log("For Execute");	
-    console.log("Executed: "+Object.keys(req));
     
-    console.log("Executed: "+req.inArguments[0]);
+    /*var keys = Object.keys(obj);
+    for (var i = 0; i < keys.length; i++) {
+      console.log(obj[keys[i]]);
+    }*/
+    
+    console.log("Executed: "+Object.keys(req));
+    console.log("Executed entries: "+Object.entries(req));
+    
+    console.log("Executed: "+req.body);
     console.log("Executed: "+Object.keys(req.inArguments[0]));
+    
+ 
+    
     
     //var requestBody = req.body.inArguments[0];
 

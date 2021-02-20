@@ -93,7 +93,7 @@ define([
         console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}");
         
         payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens,
+          //  "tokens": authTokens,
            // "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
             "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
            // "from": "Vonage APIs",

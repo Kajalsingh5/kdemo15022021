@@ -102,10 +102,17 @@ define([
         }];
         
 */
-        payload['arguments'].execute.inArguments = [{
+    /*    payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}",
             "phone": "{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.Phone}}"
+           
+        }];*/
+
+        payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "emailAddress": "kajal.singh@eternussolutions.com",
+            "phone": "918975673945"
            
         }];
     

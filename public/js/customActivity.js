@@ -116,7 +116,7 @@ define([
 
         console.log(payload);
         console.log("payload: "+JSON.stringify(payload));
-        console.log(tokens);
+        //console.log(tokens);
         
 
         console.log("test");

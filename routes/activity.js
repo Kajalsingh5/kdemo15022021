@@ -86,16 +86,21 @@ exports.execute = function (req, res) {
 
     console.log("For Execute");	
     
-    /*var keys = Object.keys(obj);
-    for (var i = 0; i < keys.length; i++) {
-      console.log(obj[keys[i]]);
-    }*/
+    
     
     console.log("Executed: "+Object.keys(req));
-    //console.log("Executed entries: "+Object.entries(req));
     
     console.log("data-----");
-    Object.keys(req).forEach(e=>console.log(e+"="+req[e]));
+    
+    var keys = Object.keys(req);
+    for (var i = 0; i < keys.length; i++) {
+      console.log("val---"+req[keys[i]]);
+    }
+
+
+    //console.log("Executed entries: "+Object.entries(req));
+    
+    //Object.keys(req).forEach(e=>console.log(e+"="+req[e]));
 
     console.log("Executed: "+req.body);
     console.log("Executed: "+Object.keys(req.inArguments[0]));

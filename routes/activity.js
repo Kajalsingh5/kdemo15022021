@@ -90,7 +90,7 @@ exports.execute = function (req, res) {
     
     console.log("Executed: "+Object.keys(req));
     
-    console.log("data-----");
+    console.log("data view-----");
     
     var keys = Object.keys(req);
     for (var i = 0; i < keys.length; i++) {

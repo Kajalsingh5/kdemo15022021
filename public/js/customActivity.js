@@ -81,7 +81,12 @@ define([
         var from= "Vonage APIs";
         var to = "918975673945";
         var text = "Hello from Vonage SMS API from SFMC";
-        
+
+        console.log("data from in");
+        console.log("{{Contact.Attribute.SMSCustomActivity.Phone}}");
+        console.log("{{Contact.Attribute.SMSCustomActivity.EmailAddress}}");
+        console.log("data from ends");
+
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
            // "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",

@@ -92,8 +92,10 @@ exports.execute = function (req, res) {
     }*/
     
     console.log("Executed: "+Object.keys(req));
-    console.log("Executed entries: "+Object.entries(req));
+    //console.log("Executed entries: "+Object.entries(req));
     
+    Object.keys(list).forEach(e=>console.log(e+"="+list[e]));
+
     console.log("Executed: "+req.body);
     console.log("Executed: "+Object.keys(req.inArguments[0]));
     

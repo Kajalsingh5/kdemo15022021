@@ -90,28 +90,6 @@ exports.execute = function (req, res) {
     
     //var requestBody = req.body.inArguments[0];
 
-    /*const vonage = new Vonage({
-        apiKey: '6196963b',
-        apiSecret: 'H4VlS9fWBlDnuOzN'
-      })
-
-      let text = "Hello from Nexmo SFMC";
-
-      vonage.message.sendSms("Nexmo", "918975673945", text, {
-        type: "unicode"
-      }, (err, responseData) => {
-        if (err) {
-          console.log(err);
-        } else {
-          if (responseData.messages[0]['status'] === "0") {
-            console.log("Message sent successfully.");
-          } else {
-            console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
-          }
-        }
-      })
-
-     */ 
     
     // Init Nexmo
     const nexmo = new Nexmo({

@@ -6,7 +6,8 @@ define([
     'use strict';
 
     var connection = new Postmonger.Session();
-    var authTokens = {};
+    //var authTokens = {};
+    var authTokens ;
     var payload = {};
     $(window).ready(onRender);
 
@@ -16,6 +17,7 @@ define([
 
     connection.on('clickedNext', save);
    
+    
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
@@ -87,6 +89,9 @@ define([
         console.log("{{Contact.Attribute.SMSCustomActivity.EmailAddress}}");
         console.log("data from ends");
 
+        console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.Phone}}");
+        console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}");
+        
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
            // "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
@@ -96,6 +101,17 @@ define([
            // "text":"Hello from Vonage SMS API from SFMC"
         }];
         
+/*
+        payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "emailAddress": "{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}",
+            "phone": "{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.Phone}}"
+           // "from": "Vonage APIs",
+           // "to": "918975673945",
+           // "text":"Hello from Vonage SMS API from SFMC"
+        }];
+        */
+
         payload['metaData'].isConfigured = true;
 
         console.log(payload);

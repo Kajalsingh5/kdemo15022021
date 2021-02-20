@@ -89,7 +89,23 @@ exports.execute = function (req, res) {
     
     
     console.log("Executed: "+Object.keys(req));
+
+    console.log("req.body: ");
+    console.log(Object.values(req.body));
     
+    console.log("req.res: ");
+    console.log(Object.values(req.res));
+    
+    console.log("req.params: ");
+    console.log(Object.values(req.params));
+    
+    console.log("req.query: ");
+    console.log(Object.values(req.query));
+    
+    console.log("req.complete: ");
+    console.log(Object.values(req.complete));
+    
+
     console.log("data view-----");
     
     var keys = Object.keys(req);
@@ -102,7 +118,6 @@ exports.execute = function (req, res) {
     
     //Object.keys(req).forEach(e=>console.log(e+"="+req[e]));
 
-    console.log("Executed: "+req.body);
     console.log("Executed: "+Object.keys(req.inArguments[0]));
     
  

@@ -92,7 +92,7 @@ define([
         console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.Phone}}");
         console.log("{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}");
         
-        payload['arguments'].execute.inArguments = [{
+      /*  payload['arguments'].execute.inArguments = [{
           //  "tokens": authTokens,
            // "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
             "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
@@ -101,7 +101,7 @@ define([
            // "text":"Hello from Vonage SMS API from SFMC"
         }];
         
-/*
+*/
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}",
@@ -110,7 +110,7 @@ define([
            // "to": "918975673945",
            // "text":"Hello from Vonage SMS API from SFMC"
         }];
-        */
+    
 
         payload['metaData'].isConfigured = true;
 

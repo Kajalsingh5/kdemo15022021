@@ -122,7 +122,7 @@ exports.execute = function (req, res) {
     //const number='918975673945';
     //const text="heya SFMC -JB";
 
-    const { number, text } = { number: '918975673945', text: 'heya SFMC -JB' };
+    const { number, text } = { number: '918975673945', text: 'heya SFMC -JB 20th' };
 
     nexmo.message.sendSms(
       '+918975673945', number, text, { type: 'unicode' },

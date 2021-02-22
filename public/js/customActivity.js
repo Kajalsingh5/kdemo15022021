@@ -87,16 +87,16 @@ define([
         console.log("data from in");
         console.log("data from ends");
         
-      /*  payload['arguments'].execute.inArguments = [{
-          //  "tokens": authTokens,
-           // "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
+        payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "emailAddress": "{{Contact.Attribute.SMSCustomActivity.EmailAddress}}",
             "phone": "{{Contact.Attribute.SMSCustomActivity.Phone}}"
            // "from": "Vonage APIs",
            // "to": "918975673945",
            // "text":"Hello from Vonage SMS API from SFMC"
         }];
         
-*/
+
     /*    payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Event.DEAudience-e9391056-7b97-460b-87dc-89634177af0d.EmailAddress}}",
@@ -104,13 +104,13 @@ define([
            
         }];*/
 
-        payload['arguments'].execute.inArguments = [{
+    /*    payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             //"emailAddress": "kajal.singh@eternussolutions.com",
             //"phone": "918975673945"
             phone :"918975673945"
         }];
-    
+    */
 
         payload['metaData'].isConfigured = true;
 

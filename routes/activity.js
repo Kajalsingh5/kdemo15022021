@@ -99,6 +99,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
   }
   if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
     var decodedArgs = decoded.inArguments[0];
+    console.log("inside jwt");
     logData(req);
     // do something
   }else {

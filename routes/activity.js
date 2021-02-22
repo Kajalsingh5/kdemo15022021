@@ -86,7 +86,30 @@ exports.execute = function (req, res) {
 
     console.log("For Execute");	
     
-    
+  
+        //new code 19th feb 2021
+console.log('new code 22nd feb 2021');
+console.log('email----------');
+//var emailAddress=requestBody.emailAddress;
+//console.log(emailAddress);
+JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+  if (err) {
+    console.error(err);
+    return res.status(401).end();
+  }
+  if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
+    var decodedArgs = decoded.inArguments[0];
+    logData(req);
+    // do something
+  }else {
+    console.error('inArguments invalid.');
+    return res.status(400).end();
+  }
+});
+
+
+
+
     
     console.log("Executed: "+Object.keys(req));
 
@@ -151,21 +174,12 @@ exports.execute = function (req, res) {
           const { messages } = responseData;
           const { ['message-id']: id, ['to']: number, ['error-text']: error  } = messages[0];
           console.dir(responseData);
-          // Get data from response
-          /*const data = {
-            id,
-            number,
-            error
-          };
-  */
-          // Emit to the client
-          //io.emit('smsStatus', data);
+         
         }
       }
     );    
 
     logData(req);
-    //res.send(200, 'Execute');
     res.status(200).send('Execute');
 
     /*const nexmo = new Nexmo({
@@ -188,8 +202,11 @@ exports.execute = function (req, res) {
     var text = requestBody.text;
     */
 
+
+
+
     // example on how to decode JWT
-    /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+   /* JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         // verification error -> unauthorized request
         if (err) {
@@ -203,21 +220,15 @@ exports.execute = function (req, res) {
             var decodedArgs = decoded.inArguments[0];
             
             logData(req);
-            nexmo.message.sendSms(from, to, text);
-            res.send(200, 'Execute');
+            //res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');
             return res.status(400).end();
         }
     });
 
-    */
-
-//new code 19th feb 2021
-console.log('new code 19th feb 2021');
-console.log('email----------');
-//var emailAddress=requestBody.emailAddress;
-//console.log(emailAddress);
+    
+*/
 
 };
 
